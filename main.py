@@ -149,7 +149,7 @@ if st.sidebar.button("Show Stock Data"):
                 
                 ax1.set_title(f'{selected_stock_name} Close Price with Moving Averages')
                 ax1.set_xlabel('Date')
-                ax1.set_ylabel('Price (USD)')
+                ax1.set_ylabel('Price (INR)')
                 ax1.legend()
                 ax1.grid(True)
                 
@@ -161,7 +161,7 @@ if st.sidebar.button("Show Stock Data"):
                 # Price chart
                 ax2.plot(historical_dates, historical_prices, 'b-', label='Close Price')
                 ax2.set_title(f'{selected_stock_name} Close Price')
-                ax2.set_ylabel('Price (USD)')
+                ax2.set_ylabel('Price (INR)')
                 ax2.legend()
                 ax2.grid(True)
                 
@@ -265,8 +265,8 @@ if st.sidebar.button("Show Stock Data"):
             
             # Display historical price change information
             st.subheader("Historical Price Change Analysis")
-            st.write(f"Starting price: ${first_price:.2f}")
-            st.write(f"Ending price: ${last_price:.2f}")
+            st.write(f"Starting price: ₹{first_price:.2f}")
+            st.write(f"Ending price: ₹{last_price:.2f}")
             
             if price_change > 0:
                 st.success(f"Price increased by {price_change:.2f}% over the selected period.")
@@ -282,8 +282,8 @@ if st.sidebar.button("Show Stock Data"):
             
             # Display predicted price change information
             st.subheader("Predicted Price Change Analysis")
-            st.write(f"Predicted starting price: ${predicted_first_price:.2f}")
-            st.write(f"Predicted ending price: ${predicted_last_price:.2f}")
+            st.write(f"Predicted starting price: ₹{predicted_first_price:.2f}")
+            st.write(f"Predicted ending price: ₹{predicted_last_price:.2f}")
             
             if predicted_change > 0:
                 st.success(f"Price predicted to increase by {predicted_change:.2f}% over the next {days_to_predict} days.")
